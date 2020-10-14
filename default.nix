@@ -5,6 +5,8 @@ let
     callPackage = pkgs.lib.callPackageWith (pkgs // common);
 
     buildMinecraftJar = callPackage ./build-minecraft-jar.nix { };
+
+    inherit (callPackage ./jars-common.nix { }) fabric-installer;
   };
 
   minecraftVersionSet = jars:
