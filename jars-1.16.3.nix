@@ -1,0 +1,122 @@
+{ lib, buildMinecraftJar }:
+
+let
+  minecraftVersion = "1.16.3";
+
+  buildMasaMod =
+    { pname, version, date ? "", time ? ""
+    , hash, meta ? {}, dependencies ? []
+    }:
+    let
+      urldate = builtins.replaceStrings [ "-" ] [ "" ] date;
+      urltime = builtins.replaceStrings [ ":" ] [ "" ] time;
+      urlVersion =
+        if time == "" || date == ""
+        then version
+        else "${version}.${urldate}.${urltime}";
+      versionString =
+        if time == "" || date == ""
+        then version
+        else "${version}-${date}-${urltime}";
+    in buildMinecraftJar {
+      inherit pname hash dependencies;
+      version = versionString;
+      url = "https://masa.dy.fi/tmp/minecraft/mods/${pname}/${pname}-fabric-${minecraftVersion}-${urlVersion}.jar";
+      meta = {
+        homepage = "https://github.com/maruohon/${pname}";
+        license = lib.licenses.lgpl3Only;
+      } // meta;
+    };
+
+in rec {
+  server = buildMinecraftJar {
+    pname = "server";
+    version = minecraftVersion;
+    url = "https://launcher.mojang.com/v1/objects/f02f4473dbf152c23d7d484952121db0b36698cb/server.jar";
+    hash = "sha256:0nxdyw23037cr9cfcsfq1cvpy75am5dzmbgvvh3fq6h89kkm1r1j";
+    meta = {
+      description = "Minecraft multiplayer server";
+      license = lib.licenses.unfree;
+    };
+  };
+
+  carpet =
+    let
+      version = "1.4.12";
+      date = "2020-10-01";
+      urldate = lib.substring 2 (builtins.stringLength date)
+        (builtins.replaceStrings [ "-" ] [ "" ] date);
+    in buildMinecraftJar {
+      pname = "carpet";
+      version = "${version}-${date}";
+      url = "https://github.com/gnembon/fabric-carpet/releases/download/v1.4-homebound/fabric-carpet-${minecraftVersion}-${version}+v${urldate}.jar";
+      hash = "sha256:1cvb753b1y59w3d8h2mkp4254w0ckrmwfa42znh0f6qz6jpd14kq";
+      meta = {
+        description = "Carpet Mod is a mod for vanilla Minecraft that allows you to take full control of what matters from a technical perspective of the game";
+        license = lib.licenses.mit;
+        homepage = "https://github.com/gnembon/fabric-carpet";
+      };
+  };
+
+  # carpet-extra = { };
+
+  itemscroller = buildMasaMod {
+    pname = "itemscroller";
+    version = "0.15.0-dev";
+    date = "2020-09-12";
+    time = "22:18:05";
+    hash = "sha256:0zgj9krxs5dxdb5w8jv7ryjld06z5hb81rpaszlnh85l021n52i7";
+    dependencies = [ malilib ];
+    meta = {
+      description = "Tiny Minecraft mod that allows moving items by scrolling over the inventory slots";
+      license = lib.licenses.gpl3Only;
+    };
+  };
+
+  litematica = buildMasaMod {
+    pname = "litematica";
+    version = "0.0.0-dev";
+    date = "2020-09-20";
+    time = "16:16:40";
+    hash = "sha256:02d8bm2c6f0rwagxlvgcc1k109mw0a5yrala4hw54qx7j7h7as12";
+    dependencies = [ malilib ];
+    meta = {
+      description = "Litematica is a client-side schematic mod for Minecraft";
+    };
+  };
+
+  malilib = buildMasaMod {
+    pname = "malilib";
+    version = "0.10.0-dev.21+arne.1";
+    hash = "sha256:080jszf61ac07yxcrxgzix4cy1mrvqahbcipny534p13cpz0qrbc";
+    meta = {
+      description = "malilib is a library mod used by masa's LiteLoader mods";
+      license = lib.licenses.gpl3Only;
+    };
+  };
+
+  minihud = buildMasaMod {
+    pname = "minihud";
+    version = "0.19.0-dev";
+    date = "2020-09-28";
+    time = "22:01:10";
+    hash = "sha256:0xgmjwv6j56bzbgd327rim8nn4ajvji99vdriv0gqfa6mbvg4cly";
+    dependencies = [ malilib ];
+    meta = {
+      description = "MiniHUD is a client-side information and overlay rendering mod for Minecraft";
+    };
+  };
+
+  tweakeroo = buildMasaMod {
+    pname = "tweakeroo";
+    version = "0.10.0-dev";
+    date = "2020-10-04";
+    time = "19:18:11";
+    hash = "sha256:18b8qjza10ylsig6ca1kwn4n98dwlvb5ns2rgar859acvnk75h51";
+    dependencies = [ malilib ];
+    meta = {
+      description = "Tweakeroo adds a selection of miscellaneous, configurable, client-side tweaks to the game";
+      license = lib.licenses.gpl3Only;
+    };
+  };
+}
