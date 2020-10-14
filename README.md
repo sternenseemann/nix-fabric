@@ -24,6 +24,9 @@ Since `nix-fabric` can also keep track of runtime dependencies of
 mods on other mods, `malilib` is installed although it is not
 specified explicitly.
 
+MultiMC won't list the mods, since they are symlinked, but fabric
+will be happy to load them regardless.
+
 ## TODO
 
 * Support for multiple Minecraft versions (trivial, but should be convenient)

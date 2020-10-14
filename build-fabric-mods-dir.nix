@@ -10,7 +10,7 @@ let
         (builtins.map setMod m.passthru.dependencies)))
       {} mods);
   copyMod = drv: ''
-    install -m644 ${drv} $out/${drv.name}
+    ln -sT ${drv} $out/${drv.name}
   '';
 in
 
