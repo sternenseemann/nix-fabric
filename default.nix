@@ -1,16 +1,23 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  supportPkgs = {
-    buildMinecraftJar = pkgs.callPackage ./build-minecraft-jar.nix { };
-    buildFabricModsDir = pkgs.callPackage ./build-fabric-mods-dir.nix { };
+  common = rec {
+    callPackage = pkgs.lib.callPackageWith (pkgs // common);
+
+    buildMinecraftJar = callPackage ./build-minecraft-jar.nix { };
   };
 
-  jars = import ./jars-1.16.3.nix {
-    inherit (supportPkgs) buildMinecraftJar;
-    inherit (pkgs) lib;
-  };
+  minecraftVersionSet = jars:
+    let
+      newSet = common // (common.callPackage jars {}) // rec {
+        callPackage = pkgs.lib.callPackageWith (pkgs // newSet);
+        buildFabricModsDir = callPackage ./build-fabric-mods-dir.nix {
+          fabricPackages = newSet;
+        };
+      };
+    in newSet;
 
-in
-
-supportPkgs // jars
+in rec {
+  fabricPackages = fabricPackages_1_16_3;
+  fabricPackages_1_16_3 = minecraftVersionSet ./jars-1.16.3.nix;
+}

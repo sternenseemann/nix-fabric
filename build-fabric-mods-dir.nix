@@ -1,6 +1,6 @@
-{ lib, runCommandLocal }:
+{ lib, runCommandLocal, fabricPackages }:
 
-mods:
+modsf:
 
 let
   setMod = m: { "${m.name}" = m; };
@@ -8,7 +8,7 @@ let
     (builtins.foldl'
       (s: m: s // (setMod m) // (builtins.foldl' (s: e: s // e) {}
         (builtins.map setMod m.passthru.dependencies)))
-      {} mods);
+      {} (modsf fabricPackages));
   copyMod = drv: ''
     ln -sT ${drv} $out/${drv.name}
   '';

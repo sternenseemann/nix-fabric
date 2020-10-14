@@ -1,6 +1,6 @@
 # nix-fabric
 
-Nix infrastructure for modded Minecraft using the fabric loader.
+Nix infrastructure for modded Minecraft using the [fabric](https://fabricmc.net) loader.
 
 ## fabric mods folder using nix
 
@@ -9,9 +9,12 @@ MultiMC or similar, you can build (and update) your `mods` folder using
 `nix-fabric` like this:
 
 ```
-$ nix-build -E 'with (import ./nix-fabric {}); buildFabricModsDir [ litematica minihud tweakeroo carpet itemscroller ]' --out-link ~/.multimc/instances/1.16.3/.minecraft/mods
+$ nix-build \
+    -E 'with (import ./. {}); fabricPackages_1_16_3.buildFabricModsDir (p: with p; [ litematica minihud tweakeroo carpet itemscroller ])' \
+    --out-link ~/.multimc/instances/1.16.3/.minecraft/mods
 …
-$ ls ~/.multimc/instances/1.15.1/.minecraft/mods
+
+$ ls ~/.multimc/instances/1.15.1/.minecraft/mods/
 carpet-1.4.12-2020-10-01.jar
 itemscroller-0.15.0-dev-2020-09-12-221805.jar
 litematica-0.0.0-dev-2020-09-20-161640.jar
@@ -29,5 +32,5 @@ will be happy to load them regardless.
 
 ## TODO
 
-* Support for multiple Minecraft versions (trivial, but should be convenient)
 * Fabric modded Minecraft servers
+* Other versions than 1.16.3 (feel free to contribute, I currently only use the latest version)
