@@ -22,6 +22,7 @@ let
     in newSet;
 
 in rec {
-  fabricPackages = fabricPackages_1_16_3;
+  fabricPackages = fabricPackages_1_16_4;
   fabricPackages_1_16_3 = minecraftVersionSet ./jars-1.16.3.nix;
+  fabricPackages_1_16_4 = minecraftVersionSet ./jars-1.16.4.nix;
 }
