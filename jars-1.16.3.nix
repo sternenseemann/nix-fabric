@@ -75,9 +75,9 @@ in rec {
   minihud = buildMasaMod' {
     pname = "minihud";
     version = "0.19.0-dev";
-    date = "2020-09-28";
-    time = "22:01:10";
-    hash = "sha256:0xgmjwv6j56bzbgd327rim8nn4ajvji99vdriv0gqfa6mbvg4cly";
+    date = "2020-10-27";
+    time = "14:54:41";
+    hash = "sha256:0krmvrb82kgj5vq09dxcrv0jw5xza92pk0xb54j6i8dj7bzmddix";
     dependencies = [ malilib ];
     meta = {
       description = "MiniHUD is a client-side information and overlay rendering mod for Minecraft";
