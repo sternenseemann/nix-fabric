@@ -1,32 +1,9 @@
-{ lib, buildMinecraftJar }:
+{ lib, buildMinecraftJar, buildMasaMod }:
 
 let
   minecraftVersion = "1.16.3";
 
-  buildMasaMod =
-    { pname, version, date ? "", time ? ""
-    , hash, meta ? {}, dependencies ? []
-    }:
-    let
-      urldate = builtins.replaceStrings [ "-" ] [ "" ] date;
-      urltime = builtins.replaceStrings [ ":" ] [ "" ] time;
-      urlVersion =
-        if time == "" || date == ""
-        then version
-        else "${version}.${urldate}.${urltime}";
-      versionString =
-        if time == "" || date == ""
-        then version
-        else "${version}-${date}-${urltime}";
-    in buildMinecraftJar {
-      inherit pname hash dependencies;
-      version = versionString;
-      url = "https://masa.dy.fi/tmp/minecraft/mods/${pname}/${pname}-fabric-${minecraftVersion}-${urlVersion}.jar";
-      meta = {
-        homepage = "https://github.com/maruohon/${pname}";
-        license = lib.licenses.lgpl3Only;
-      } // meta;
-    };
+  buildMasaMod' = buildMasaMod minecraftVersion;
 
 in rec {
   server = buildMinecraftJar {
@@ -60,7 +37,7 @@ in rec {
 
   # carpet-extra = { };
 
-  itemscroller = buildMasaMod {
+  itemscroller = buildMasaMod' {
     pname = "itemscroller";
     version = "0.15.0-dev";
     date = "2020-09-12";
@@ -73,7 +50,7 @@ in rec {
     };
   };
 
-  litematica = buildMasaMod {
+  litematica = buildMasaMod' {
     pname = "litematica";
     version = "0.0.0-dev";
     date = "2020-09-20";
@@ -85,7 +62,7 @@ in rec {
     };
   };
 
-  malilib = buildMasaMod {
+  malilib = buildMasaMod' {
     pname = "malilib";
     version = "0.10.0-dev.21+arne.1";
     hash = "sha256:080jszf61ac07yxcrxgzix4cy1mrvqahbcipny534p13cpz0qrbc";
@@ -95,7 +72,7 @@ in rec {
     };
   };
 
-  minihud = buildMasaMod {
+  minihud = buildMasaMod' {
     pname = "minihud";
     version = "0.19.0-dev";
     date = "2020-09-28";
@@ -107,7 +84,7 @@ in rec {
     };
   };
 
-  tweakeroo = buildMasaMod {
+  tweakeroo = buildMasaMod' {
     pname = "tweakeroo";
     version = "0.10.0-dev";
     date = "2020-10-04";

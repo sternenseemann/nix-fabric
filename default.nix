@@ -6,6 +6,8 @@ let
 
     buildMinecraftJar = callPackage ./build-minecraft-jar.nix { };
 
+    buildMasaMod = callPackage ./build-masa-mod.nix { };
+
     inherit (callPackage ./jars-common.nix { }) fabric-installer;
   };
 
