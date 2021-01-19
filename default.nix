@@ -17,9 +17,7 @@ let
         inherit (pkgs) stdenv fetchurl runCommandLocal;
       } // self);
 
-      buildFabricModsDir = self.callPackage ./build-support/build-fabric-mods-dir.nix {
-        fabricPackages = self;
-      };
+      buildFabricModsDir = self.callPackage ./build-support/build-fabric-mods-dir.nix { };
 
       buildMasaMod =
         self.callPackage ./build-support/build-masa-mod.nix { } self.minecraftVersion;
