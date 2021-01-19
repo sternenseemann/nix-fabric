@@ -1,4 +1,4 @@
-{ lib, buildMinecraftJar }:
+{ lib, fetchMinecraftJar }:
 
 minecraftVersion:
 
@@ -18,7 +18,7 @@ let
     then version
     else "${version}-${date}-${urltime}";
 
-in buildMinecraftJar {
+in fetchMinecraftJar {
   inherit pname hash dependencies;
   version = versionString;
   url = "https://masa.dy.fi/tmp/minecraft/mods/${pname}/${pname}-fabric-${minecraftVersion}-${urlVersion}.jar";

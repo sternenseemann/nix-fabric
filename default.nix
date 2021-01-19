@@ -4,25 +4,29 @@ let
   inherit (pkgs.lib) fix;
 
   common = self: {
-    buildMinecraftJar = self.callPackage ./build-support/build-minecraft-jar.nix { };
+    # from nixpkgs
+    jre = pkgs.jre8_headless;
 
-    buildFabricJar = self.callPackage ./build-support/build-fabric-jar.nix { };
+    inherit (pkgs) lib;
+
+    # set management
+    callPackage = self.lib.callPackageWith ({
+      inherit (pkgs) stdenv fetchurl runCommandLocal;
+    } // self);
+
+    # standard build support
+    fetchMinecraftJar = self.callPackage ./build-support/fetch-minecraft-jar.nix { };
+
+    fetchMavenJar = self.callPackage ./build-support/fetch-maven-jar.nix { };
+    buildFabricModsDir = self.callPackage ./build-support/build-fabric-mods-dir.nix { };
+
+    fetchMasaMod =
+      self.callPackage ./build-support/fetch-masa-mod.nix { } self.minecraftVersion;
   } // import ./pkgs/jars-common.nix self;
 
   minecraftVersionSet = minecraftVersion: jars:
     fix (self: common self // {
       inherit minecraftVersion;
-
-      inherit (pkgs) lib;
-
-      callPackage = self.lib.callPackageWith ({
-        inherit (pkgs) stdenv fetchurl runCommandLocal;
-      } // self);
-
-      buildFabricModsDir = self.callPackage ./build-support/build-fabric-mods-dir.nix { };
-
-      buildMasaMod =
-        self.callPackage ./build-support/build-masa-mod.nix { } self.minecraftVersion;
     } // import jars self);
 
 in rec {

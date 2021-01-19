@@ -3,7 +3,7 @@ self:
 with self;
 
 {
-  server = buildMinecraftJar {
+  server = fetchMinecraftJar {
     pname = "server";
     version = minecraftVersion;
     url = "https://launcher.mojang.com/v1/objects/f02f4473dbf152c23d7d484952121db0b36698cb/server.jar";
@@ -20,7 +20,7 @@ with self;
       date = "2020-10-01";
       urldate = lib.substring 2 (builtins.stringLength date)
         (builtins.replaceStrings [ "-" ] [ "" ] date);
-    in buildMinecraftJar {
+    in fetchMinecraftJar {
       pname = "carpet";
       version = "${version}-${date}";
       url = "https://github.com/gnembon/fabric-carpet/releases/download/v1.4-homebound/fabric-carpet-${minecraftVersion}-${version}+v${urldate}.jar";
@@ -34,7 +34,7 @@ with self;
 
   # carpet-extra = { };
 
-  itemscroller = buildMasaMod {
+  itemscroller = fetchMasaMod {
     pname = "itemscroller";
     version = "0.15.0-dev";
     date = "2020-09-12";
@@ -47,7 +47,7 @@ with self;
     };
   };
 
-  litematica = buildMasaMod {
+  litematica = fetchMasaMod {
     pname = "litematica";
     version = "0.0.0-dev";
     date = "2020-09-20";
@@ -59,7 +59,7 @@ with self;
     };
   };
 
-  malilib = buildMasaMod {
+  malilib = fetchMasaMod {
     pname = "malilib";
     version = "0.10.0-dev.21+arne.1";
     hash = "sha256:080jszf61ac07yxcrxgzix4cy1mrvqahbcipny534p13cpz0qrbc";
@@ -69,7 +69,7 @@ with self;
     };
   };
 
-  minihud = buildMasaMod {
+  minihud = fetchMasaMod {
     pname = "minihud";
     version = "0.19.0-dev";
     date = "2020-10-27";
@@ -81,7 +81,7 @@ with self;
     };
   };
 
-  tweakeroo = buildMasaMod {
+  tweakeroo = fetchMasaMod {
     pname = "tweakeroo";
     version = "0.10.0-dev";
     date = "2020-10-04";
