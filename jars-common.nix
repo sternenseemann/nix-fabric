@@ -1,4 +1,6 @@
-{ lib, buildMinecraftJar }:
+self:
+
+with self;
 
 {
   fabric-installer = buildMinecraftJar {

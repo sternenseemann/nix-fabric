@@ -1,11 +1,8 @@
-{ lib, buildMinecraftJar, buildMasaMod }:
+self:
 
-let
-  minecraftVersion = "1.16.4";
+with self;
 
-  buildMasaMod' = buildMasaMod minecraftVersion;
-
-in rec {
+{
   server = buildMinecraftJar {
     pname = "server";
     version = minecraftVersion;
@@ -37,7 +34,7 @@ in rec {
 
   # carpet-extra = { };
 
-  itemscroller = buildMasaMod' {
+  itemscroller = buildMasaMod {
     pname = "itemscroller";
     version = "0.15.0-dev";
     date = "2020-11-03";
@@ -50,7 +47,7 @@ in rec {
     };
   };
 
-  litematica = buildMasaMod' {
+  litematica = buildMasaMod {
     pname = "litematica";
     version = "0.0.0-dev";
     date = "2020-11-03";
@@ -62,7 +59,7 @@ in rec {
     };
   };
 
-  malilib = buildMasaMod' {
+  malilib = buildMasaMod {
     pname = "malilib";
     version = "0.10.0-dev.21+arne.2";
     hash = "sha256:1h629bmp4dr9f0vcvlxdlji3cjrp06qdasy5mgwdvqg33gazg3qz";
@@ -72,7 +69,7 @@ in rec {
     };
   };
 
-  minihud = buildMasaMod' {
+  minihud = buildMasaMod {
     pname = "minihud";
     version = "0.19.0-dev";
     date = "2020-11-03";
@@ -84,7 +81,7 @@ in rec {
     };
   };
 
-  tweakeroo = buildMasaMod' {
+  tweakeroo = buildMasaMod {
     pname = "tweakeroo";
     version = "0.10.0-dev";
     date = "2020-11-22";

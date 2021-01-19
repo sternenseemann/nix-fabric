@@ -1,28 +1,32 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  common = rec {
-    callPackage = pkgs.lib.callPackageWith (pkgs // common);
+  inherit (pkgs.lib) fix;
 
-    buildMinecraftJar = callPackage ./build-minecraft-jar.nix { };
+  common = self: {
+    buildMinecraftJar = self.callPackage ./build-minecraft-jar.nix { };
+  } // import ./jars-common.nix self;
 
-    buildMasaMod = callPackage ./build-masa-mod.nix { };
+  minecraftVersionSet = minecraftVersion: jars:
+    fix (self: common self // {
+      inherit minecraftVersion;
 
-    inherit (callPackage ./jars-common.nix { }) fabric-installer;
-  };
+      inherit (pkgs) lib;
 
-  minecraftVersionSet = jars:
-    let
-      newSet = common // (common.callPackage jars {}) // rec {
-        callPackage = pkgs.lib.callPackageWith (pkgs // newSet);
-        buildFabricModsDir = callPackage ./build-fabric-mods-dir.nix {
-          fabricPackages = newSet;
-        };
+      callPackage = self.lib.callPackageWith ({
+        inherit (pkgs) stdenv fetchurl runCommandLocal;
+      } // self);
+
+      buildFabricModsDir = self.callPackage ./build-fabric-mods-dir.nix {
+        fabricPackages = self;
       };
-    in newSet;
+
+      buildMasaMod =
+        self.callPackage ./build-masa-mod.nix { } self.minecraftVersion;
+    } // import jars self);
 
 in rec {
   fabricPackages = fabricPackages_1_16_4;
-  fabricPackages_1_16_3 = minecraftVersionSet ./jars-1.16.3.nix;
-  fabricPackages_1_16_4 = minecraftVersionSet ./jars-1.16.4.nix;
+  fabricPackages_1_16_3 = minecraftVersionSet "1.16.3" ./jars-1.16.3.nix;
+  fabricPackages_1_16_4 = minecraftVersionSet "1.16.4" ./jars-1.16.4.nix;
 }
