@@ -5,6 +5,8 @@ let
 
   common = self: {
     buildMinecraftJar = self.callPackage ./build-support/build-minecraft-jar.nix { };
+
+    buildFabricJar = self.callPackage ./build-support/build-fabric-jar.nix { };
   } // import ./pkgs/jars-common.nix self;
 
   minecraftVersionSet = minecraftVersion: jars:
