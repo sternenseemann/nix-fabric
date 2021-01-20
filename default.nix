@@ -10,11 +10,9 @@ let
     # from nixpkgs
     jre = pkgs.jre8_headless;
 
-    inherit (pkgs) lib;
-
     # set management
-    callPackage = self.lib.callPackageWith ({
-      inherit (pkgs) stdenv fetchurl runCommandLocal;
+    callPackage = pkgs.lib.callPackageWith ({
+      inherit (pkgs) stdenv lib fetchurl runCommandLocal;
     } // self);
 
     # standard build support
@@ -34,7 +32,7 @@ let
   minecraftVersionSet = minecraftVersion: jars:
     fix (self: common self // {
       inherit minecraftVersion;
-    } // import jars self);
+    } // import jars { inherit self; inherit (pkgs) lib; });
 
   knownVersions = fromJSON (readFile ./data/minecraft-versions.json);
 
