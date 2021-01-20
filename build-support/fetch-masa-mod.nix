@@ -2,9 +2,13 @@
 
 minecraftVersion:
 
-{ pname, version, date ? "", time ? ""
-, hash, meta ? {}, dependencies ? []
-}:
+{ date ? ""
+, time ? ""
+, meta ? {}
+, version
+, pname
+, ...
+}@args:
 
 let
   urldate = builtins.replaceStrings [ "-" ] [ "" ] date;
@@ -18,13 +22,12 @@ let
     then version
     else "${version}-${date}-${urltime}";
 
-in fetchMinecraftJar {
-  inherit pname hash dependencies;
+in fetchMinecraftJar ({
   version = versionString;
   url = "https://masa.dy.fi/tmp/minecraft/mods/${pname}/${pname}-fabric-${minecraftVersion}-${urlVersion}.jar";
   meta = {
     homepage = "https://github.com/maruohon/${pname}";
     license = lib.licenses.lgpl3Only;
   } // meta;
-}
+} // builtins.removeAttrs args [ "date" "time" "meta" "version" ])
 
