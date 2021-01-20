@@ -1,7 +1,6 @@
 { stdenv, fetchurl }:
 
 { url
-, hash
 , pname
 , version
 , meta ? {}
