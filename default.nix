@@ -47,5 +47,13 @@ let
 in
 
 fix (self: {
+  # development tools
+  tools = {
+    update-fabric = pkgs.callPackage ./tools/update-fabric {
+      inherit (pkgs.lispPackages) buildLispPackage cl-json alexandria drakma;
+    };
+  };
+
+  # default set
   fabricPackages = self.fabricPackages_1_16_4;
 } // listToAttrs knownSets)

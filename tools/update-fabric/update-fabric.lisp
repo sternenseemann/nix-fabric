@@ -1,7 +1,13 @@
 (defpackage :update-fabric
-  (:use :cl :drakma)
+  (:use :cl :uiop)
+  (:import-from :drakma :http-request)
   (:import-from :alexandria :define-constant)
-  (:import-from :cl-json :encode-json :decode-json))
+  (:import-from :cl-json :encode-json :decode-json)
+  (:export :main :latest-fabric-installer-set
+           :stable-loaders :loader-meta :loader-profile
+           :library-set :nix-jar-set :known-minecraft-versions
+           :parse-maven-identifier :maven-url
+           :loader-dependency-set :*fake-hash*))
 
 (declaim (optimize (safety 3)))
 
@@ -41,8 +47,8 @@
   (remove-if-not
     (lambda (x) (cdr (assoc :stable x)))
     (decode-json
-      (drakma:http-request #.'(endpoint "/versions/loader")
-                           :want-stream t))))
+      (http-request #.'(endpoint "/versions/loader")
+                    :want-stream t))))
 
 (defun loader-meta (mc-version loader-version)
   "/v2/versions/loader/:minecraft-version/:loader-version"
@@ -50,7 +56,7 @@
   (check-type mc-version string)
   (let ((url #.'(endpoint (format nil "/versions/loader/~A/~A"
                                   mc-version loader-version))))
-    (decode-json (drakma:http-request url :want-stream t))))
+    (decode-json (http-request url :want-stream t))))
 
 (defun loader-profile (mc-version loader-version)
   "/v2/versions/loader/:minecraft-version/:loader-version/profile/json"
@@ -58,7 +64,7 @@
   (check-type mc-version string)
   (let ((url #.'(endpoint (format nil "/versions/loader/~A/~A/profile/json"
                                   mc-version loader-version))))
-    (decode-json (drakma:http-request url :want-stream t))))
+    (decode-json (http-request url :want-stream t))))
 
 (defun parse-maven-identifier (maven)
   ; TODO(sterni): find out what the separator field means
@@ -138,11 +144,14 @@
 (defun latest-fabric-installer-set ()
   (let* ((url #.'(endpoint "/versions/installer"))
          (obj (car (decode-json
-                     (drakma:http-request url :want-stream t)))))
+                     (http-request url :want-stream t)))))
     (when obj
       (nix-jar-set nil (assocc :maven obj) (assocc :url obj)))))
 
 (defun main ()
+  ; without this uiop somehow caches /build/ as TMPDIR
+  ; from build time when using buildLispPackage‽
+  (uiop:setup-temporary-directory)
   (let* ((top-level (pathname (or (car (uiop:command-line-arguments)) ".")))
          (out (merge-pathnames "data/fabric-lock.json" top-level))
          (loader-version (cdr (assoc :version (car (stable-loaders)))))
