@@ -5,6 +5,7 @@
 , version
 , meta ? {}
 , dependencies ? []
+, passthru ? {}
 , ...
 }@args:
 
@@ -13,6 +14,6 @@ fetchurl ({
   passthru = {
     inherit version;
     inherit dependencies;
-  };
-} // builtins.removeAttrs args [ "dependencies" "pname" "version" ])
+  } // passthru;
+} // builtins.removeAttrs args [ "dependencies" "pname" "version" "passthru" ])
 
