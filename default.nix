@@ -4,6 +4,8 @@ let
   inherit (pkgs.lib) fix nameValuePair;
   inherit (builtins) readFile fromJSON map listToAttrs replaceStrings;
 
+  fabricLock = fromJSON (readFile ./data/fabric-lock.json);
+
   common = self: {
     # from nixpkgs
     jre = pkgs.jre8_headless;
@@ -23,7 +25,11 @@ let
 
     fetchMasaMod =
       self.callPackage ./build-support/fetch-masa-mod.nix { } self.minecraftVersion;
-  } // import ./pkgs/jars-common.nix self;
+
+    # version agnostic jars
+
+    fabric-installer = self.fetchMavenJar fabricLock.fabric-installer.generic;
+  };
 
   minecraftVersionSet = minecraftVersion: jars:
     fix (self: common self // {
