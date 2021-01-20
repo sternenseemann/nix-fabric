@@ -1,7 +1,8 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  inherit (pkgs.lib) fix;
+  inherit (pkgs.lib) fix nameValuePair;
+  inherit (builtins) readFile fromJSON map listToAttrs replaceStrings;
 
   common = self: {
     # from nixpkgs
@@ -29,8 +30,18 @@ let
       inherit minecraftVersion;
     } // import jars self);
 
-in rec {
-  fabricPackages = fabricPackages_1_16_4;
-  fabricPackages_1_16_3 = minecraftVersionSet "1.16.3" ./pkgs/jars-1.16.3.nix;
-  fabricPackages_1_16_4 = minecraftVersionSet "1.16.4" ./pkgs/jars-1.16.4.nix;
-}
+  knownVersions = fromJSON (readFile ./data/minecraft-versions.json);
+
+  knownSets =
+    map (v:
+      let
+        name = "fabricPackages_${replaceStrings [ "." ] [ "_" ] v}";
+        path = "${./pkgs}/jars-${v}.nix";
+      in
+        nameValuePair name (minecraftVersionSet v path))
+      knownVersions;
+in
+
+fix (self: {
+  fabricPackages = self.fabricPackages_1_16_4;
+} // listToAttrs knownSets)
