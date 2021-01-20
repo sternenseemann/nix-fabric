@@ -26,7 +26,7 @@ let
 
     # version agnostic jars
 
-    fabric-installer = self.fetchMavenJar fabricLock.fabric-installer.generic;
+    fabric-installer = self.fetchMavenJar fabricLock.fabric-installer;
   };
 
   minecraftVersionSet = minecraftVersion: jars:

@@ -1,434 +1,434 @@
 {
   "fabric-loader": {
     "version": "0.11.1",
-    "1.16.3": {
-      "net.fabricmc:fabric-loader:0.11.1": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.11.1/fabric-loader-0.11.1.jar",
-        "sha256": "08wbgb9darhmhffsqhb723hqgglrg2yrbrwlrq1qzbwq0p84cahh",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "fabric-loader"
-        ],
-        "version": "0.11.1"
+    "dependencies": {
+      "1.16.3": {
+        "net.fabricmc:fabric-loader:0.11.1": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.11.1/fabric-loader-0.11.1.jar",
+          "sha256": "08wbgb9darhmhffsqhb723hqgglrg2yrbrwlrq1qzbwq0p84cahh",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "fabric-loader"
+          ],
+          "version": "0.11.1"
+        },
+        "net.fabricmc:tiny-mappings-parser:0.2.2.14": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/tiny-mappings-parser/0.2.2.14/tiny-mappings-parser-0.2.2.14.jar",
+          "sha256": "0my9m6idghq1qz4wdr7bjji18p4z93iqx7a77apcnbhprrdiny3p",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "tiny-mappings-parser"
+          ],
+          "version": "0.2.2.14"
+        },
+        "net.fabricmc:sponge-mixin:0.8.2+build.24": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/sponge-mixin/0.8.2+build.24/sponge-mixin-0.8.2+build.24.jar",
+          "sha256": "175wjwy8kmjqja7y3xzb00iiz343i36nrvzfqgrr2brqc4i7kycj",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "sponge-mixin"
+          ],
+          "version": "0.8.2+build.24"
+        },
+        "net.fabricmc:tiny-remapper:0.3.0.70": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.3.0.70/tiny-remapper-0.3.0.70.jar",
+          "sha256": "080z7x0zyy681138kqpz7scqa3br5jmqwwg1fvx5c4xan8frc1g8",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "tiny-remapper"
+          ],
+          "version": "0.3.0.70"
+        },
+        "net.fabricmc:access-widener:1.0.0": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/access-widener/1.0.0/access-widener-1.0.0.jar",
+          "sha256": "007crna1y29r07wvrr063fyl6nrx3z4g7y1d3qxn0zx57dlwarvc",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "access-widener"
+          ],
+          "version": "1.0.0"
+        },
+        "net.fabricmc:fabric-loader-sat4j:2.3.5.4": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader-sat4j/2.3.5.4/fabric-loader-sat4j-2.3.5.4.jar",
+          "sha256": "1b47v90pqn4ddml7dwmcf7z37ywacfh1gh398f6nj68135mlsl5i",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "fabric-loader-sat4j"
+          ],
+          "version": "2.3.5.4"
+        },
+        "com.google.jimfs:jimfs:1.2-fabric": {
+          "url": "https://maven.fabricmc.net/com/google/jimfs/jimfs/1.2-fabric/jimfs-1.2-fabric.jar",
+          "sha256": "15k9fs4iacbsqv28x3lygm55a4qsh3glc4vbglfscrd0r2py2qw5",
+          "classPath": [
+            "com",
+            "google",
+            "jimfs",
+            "jimfs"
+          ],
+          "version": "1.2-fabric"
+        },
+        "org.ow2.asm:asm:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm/9.0/asm-9.0.jar",
+          "sha256": "1q48g3afm40a1yshp7i35idx8i9k1zhb834x6kyr5vjaj5s7by8d",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-analysis:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar",
+          "sha256": "19n2r4nk0nsy8189h479hh2vhzi8nyd4ad55kandm92nz1nxwiid",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-analysis"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-commons:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar",
+          "sha256": "0bq90arz3xy4gk87n8yfrb77jv9icch01yrc5znx8yz6nyn9140v",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-commons"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-tree:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar",
+          "sha256": "03g0fv44wiwsxgl1m5pys10d2xsymidf8s457a462n5r5qrmzhp2",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-tree"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-util:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar",
+          "sha256": "1dlva68k6qw3ns7g6abyji2s5c49lq31mh7kjd8yfqh83v8fgxia",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-util"
+          ],
+          "version": "9.0"
+        },
+        "com.google.guava:guava:21.0": {
+          "url": "https://maven.fabricmc.net/com/google/guava/guava/21.0/guava-21.0.jar",
+          "sha256": "105l92cndc1i63x49bvsr4skz41cgg7sijvqza9li2mwi9qkj8cp",
+          "classPath": [
+            "com",
+            "google",
+            "guava",
+            "guava"
+          ],
+          "version": "21.0"
+        }
       },
-      "net.fabricmc:tiny-mappings-parser:0.2.2.14": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/tiny-mappings-parser/0.2.2.14/tiny-mappings-parser-0.2.2.14.jar",
-        "sha256": "0my9m6idghq1qz4wdr7bjji18p4z93iqx7a77apcnbhprrdiny3p",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "tiny-mappings-parser"
-        ],
-        "version": "0.2.2.14"
+      "1.16.4": {
+        "net.fabricmc:fabric-loader:0.11.1": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.11.1/fabric-loader-0.11.1.jar",
+          "sha256": "08wbgb9darhmhffsqhb723hqgglrg2yrbrwlrq1qzbwq0p84cahh",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "fabric-loader"
+          ],
+          "version": "0.11.1"
+        },
+        "net.fabricmc:tiny-mappings-parser:0.2.2.14": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/tiny-mappings-parser/0.2.2.14/tiny-mappings-parser-0.2.2.14.jar",
+          "sha256": "0my9m6idghq1qz4wdr7bjji18p4z93iqx7a77apcnbhprrdiny3p",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "tiny-mappings-parser"
+          ],
+          "version": "0.2.2.14"
+        },
+        "net.fabricmc:sponge-mixin:0.8.2+build.24": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/sponge-mixin/0.8.2+build.24/sponge-mixin-0.8.2+build.24.jar",
+          "sha256": "175wjwy8kmjqja7y3xzb00iiz343i36nrvzfqgrr2brqc4i7kycj",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "sponge-mixin"
+          ],
+          "version": "0.8.2+build.24"
+        },
+        "net.fabricmc:tiny-remapper:0.3.0.70": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.3.0.70/tiny-remapper-0.3.0.70.jar",
+          "sha256": "080z7x0zyy681138kqpz7scqa3br5jmqwwg1fvx5c4xan8frc1g8",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "tiny-remapper"
+          ],
+          "version": "0.3.0.70"
+        },
+        "net.fabricmc:access-widener:1.0.0": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/access-widener/1.0.0/access-widener-1.0.0.jar",
+          "sha256": "007crna1y29r07wvrr063fyl6nrx3z4g7y1d3qxn0zx57dlwarvc",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "access-widener"
+          ],
+          "version": "1.0.0"
+        },
+        "net.fabricmc:fabric-loader-sat4j:2.3.5.4": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader-sat4j/2.3.5.4/fabric-loader-sat4j-2.3.5.4.jar",
+          "sha256": "1b47v90pqn4ddml7dwmcf7z37ywacfh1gh398f6nj68135mlsl5i",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "fabric-loader-sat4j"
+          ],
+          "version": "2.3.5.4"
+        },
+        "com.google.jimfs:jimfs:1.2-fabric": {
+          "url": "https://maven.fabricmc.net/com/google/jimfs/jimfs/1.2-fabric/jimfs-1.2-fabric.jar",
+          "sha256": "15k9fs4iacbsqv28x3lygm55a4qsh3glc4vbglfscrd0r2py2qw5",
+          "classPath": [
+            "com",
+            "google",
+            "jimfs",
+            "jimfs"
+          ],
+          "version": "1.2-fabric"
+        },
+        "org.ow2.asm:asm:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm/9.0/asm-9.0.jar",
+          "sha256": "1q48g3afm40a1yshp7i35idx8i9k1zhb834x6kyr5vjaj5s7by8d",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-analysis:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar",
+          "sha256": "19n2r4nk0nsy8189h479hh2vhzi8nyd4ad55kandm92nz1nxwiid",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-analysis"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-commons:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar",
+          "sha256": "0bq90arz3xy4gk87n8yfrb77jv9icch01yrc5znx8yz6nyn9140v",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-commons"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-tree:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar",
+          "sha256": "03g0fv44wiwsxgl1m5pys10d2xsymidf8s457a462n5r5qrmzhp2",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-tree"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-util:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar",
+          "sha256": "1dlva68k6qw3ns7g6abyji2s5c49lq31mh7kjd8yfqh83v8fgxia",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-util"
+          ],
+          "version": "9.0"
+        },
+        "com.google.guava:guava:21.0": {
+          "url": "https://maven.fabricmc.net/com/google/guava/guava/21.0/guava-21.0.jar",
+          "sha256": "105l92cndc1i63x49bvsr4skz41cgg7sijvqza9li2mwi9qkj8cp",
+          "classPath": [
+            "com",
+            "google",
+            "guava",
+            "guava"
+          ],
+          "version": "21.0"
+        }
       },
-      "net.fabricmc:sponge-mixin:0.8.2+build.24": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/sponge-mixin/0.8.2+build.24/sponge-mixin-0.8.2+build.24.jar",
-        "sha256": "175wjwy8kmjqja7y3xzb00iiz343i36nrvzfqgrr2brqc4i7kycj",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "sponge-mixin"
-        ],
-        "version": "0.8.2+build.24"
-      },
-      "net.fabricmc:tiny-remapper:0.3.0.70": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.3.0.70/tiny-remapper-0.3.0.70.jar",
-        "sha256": "080z7x0zyy681138kqpz7scqa3br5jmqwwg1fvx5c4xan8frc1g8",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "tiny-remapper"
-        ],
-        "version": "0.3.0.70"
-      },
-      "net.fabricmc:access-widener:1.0.0": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/access-widener/1.0.0/access-widener-1.0.0.jar",
-        "sha256": "007crna1y29r07wvrr063fyl6nrx3z4g7y1d3qxn0zx57dlwarvc",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "access-widener"
-        ],
-        "version": "1.0.0"
-      },
-      "net.fabricmc:fabric-loader-sat4j:2.3.5.4": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader-sat4j/2.3.5.4/fabric-loader-sat4j-2.3.5.4.jar",
-        "sha256": "1b47v90pqn4ddml7dwmcf7z37ywacfh1gh398f6nj68135mlsl5i",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "fabric-loader-sat4j"
-        ],
-        "version": "2.3.5.4"
-      },
-      "com.google.jimfs:jimfs:1.2-fabric": {
-        "url": "https://maven.fabricmc.net/com/google/jimfs/jimfs/1.2-fabric/jimfs-1.2-fabric.jar",
-        "sha256": "15k9fs4iacbsqv28x3lygm55a4qsh3glc4vbglfscrd0r2py2qw5",
-        "classPath": [
-          "com",
-          "google",
-          "jimfs",
-          "jimfs"
-        ],
-        "version": "1.2-fabric"
-      },
-      "org.ow2.asm:asm:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm/9.0/asm-9.0.jar",
-        "sha256": "1q48g3afm40a1yshp7i35idx8i9k1zhb834x6kyr5vjaj5s7by8d",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-analysis:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar",
-        "sha256": "19n2r4nk0nsy8189h479hh2vhzi8nyd4ad55kandm92nz1nxwiid",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-analysis"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-commons:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar",
-        "sha256": "0bq90arz3xy4gk87n8yfrb77jv9icch01yrc5znx8yz6nyn9140v",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-commons"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-tree:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar",
-        "sha256": "03g0fv44wiwsxgl1m5pys10d2xsymidf8s457a462n5r5qrmzhp2",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-tree"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-util:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar",
-        "sha256": "1dlva68k6qw3ns7g6abyji2s5c49lq31mh7kjd8yfqh83v8fgxia",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-util"
-        ],
-        "version": "9.0"
-      },
-      "com.google.guava:guava:21.0": {
-        "url": "https://maven.fabricmc.net/com/google/guava/guava/21.0/guava-21.0.jar",
-        "sha256": "105l92cndc1i63x49bvsr4skz41cgg7sijvqza9li2mwi9qkj8cp",
-        "classPath": [
-          "com",
-          "google",
-          "guava",
-          "guava"
-        ],
-        "version": "21.0"
-      }
-    },
-    "1.16.4": {
-      "net.fabricmc:fabric-loader:0.11.1": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.11.1/fabric-loader-0.11.1.jar",
-        "sha256": "08wbgb9darhmhffsqhb723hqgglrg2yrbrwlrq1qzbwq0p84cahh",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "fabric-loader"
-        ],
-        "version": "0.11.1"
-      },
-      "net.fabricmc:tiny-mappings-parser:0.2.2.14": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/tiny-mappings-parser/0.2.2.14/tiny-mappings-parser-0.2.2.14.jar",
-        "sha256": "0my9m6idghq1qz4wdr7bjji18p4z93iqx7a77apcnbhprrdiny3p",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "tiny-mappings-parser"
-        ],
-        "version": "0.2.2.14"
-      },
-      "net.fabricmc:sponge-mixin:0.8.2+build.24": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/sponge-mixin/0.8.2+build.24/sponge-mixin-0.8.2+build.24.jar",
-        "sha256": "175wjwy8kmjqja7y3xzb00iiz343i36nrvzfqgrr2brqc4i7kycj",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "sponge-mixin"
-        ],
-        "version": "0.8.2+build.24"
-      },
-      "net.fabricmc:tiny-remapper:0.3.0.70": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.3.0.70/tiny-remapper-0.3.0.70.jar",
-        "sha256": "080z7x0zyy681138kqpz7scqa3br5jmqwwg1fvx5c4xan8frc1g8",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "tiny-remapper"
-        ],
-        "version": "0.3.0.70"
-      },
-      "net.fabricmc:access-widener:1.0.0": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/access-widener/1.0.0/access-widener-1.0.0.jar",
-        "sha256": "007crna1y29r07wvrr063fyl6nrx3z4g7y1d3qxn0zx57dlwarvc",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "access-widener"
-        ],
-        "version": "1.0.0"
-      },
-      "net.fabricmc:fabric-loader-sat4j:2.3.5.4": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader-sat4j/2.3.5.4/fabric-loader-sat4j-2.3.5.4.jar",
-        "sha256": "1b47v90pqn4ddml7dwmcf7z37ywacfh1gh398f6nj68135mlsl5i",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "fabric-loader-sat4j"
-        ],
-        "version": "2.3.5.4"
-      },
-      "com.google.jimfs:jimfs:1.2-fabric": {
-        "url": "https://maven.fabricmc.net/com/google/jimfs/jimfs/1.2-fabric/jimfs-1.2-fabric.jar",
-        "sha256": "15k9fs4iacbsqv28x3lygm55a4qsh3glc4vbglfscrd0r2py2qw5",
-        "classPath": [
-          "com",
-          "google",
-          "jimfs",
-          "jimfs"
-        ],
-        "version": "1.2-fabric"
-      },
-      "org.ow2.asm:asm:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm/9.0/asm-9.0.jar",
-        "sha256": "1q48g3afm40a1yshp7i35idx8i9k1zhb834x6kyr5vjaj5s7by8d",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-analysis:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar",
-        "sha256": "19n2r4nk0nsy8189h479hh2vhzi8nyd4ad55kandm92nz1nxwiid",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-analysis"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-commons:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar",
-        "sha256": "0bq90arz3xy4gk87n8yfrb77jv9icch01yrc5znx8yz6nyn9140v",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-commons"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-tree:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar",
-        "sha256": "03g0fv44wiwsxgl1m5pys10d2xsymidf8s457a462n5r5qrmzhp2",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-tree"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-util:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar",
-        "sha256": "1dlva68k6qw3ns7g6abyji2s5c49lq31mh7kjd8yfqh83v8fgxia",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-util"
-        ],
-        "version": "9.0"
-      },
-      "com.google.guava:guava:21.0": {
-        "url": "https://maven.fabricmc.net/com/google/guava/guava/21.0/guava-21.0.jar",
-        "sha256": "105l92cndc1i63x49bvsr4skz41cgg7sijvqza9li2mwi9qkj8cp",
-        "classPath": [
-          "com",
-          "google",
-          "guava",
-          "guava"
-        ],
-        "version": "21.0"
-      }
-    },
-    "1.16.5": {
-      "net.fabricmc:fabric-loader:0.11.1": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.11.1/fabric-loader-0.11.1.jar",
-        "sha256": "08wbgb9darhmhffsqhb723hqgglrg2yrbrwlrq1qzbwq0p84cahh",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "fabric-loader"
-        ],
-        "version": "0.11.1"
-      },
-      "net.fabricmc:tiny-mappings-parser:0.2.2.14": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/tiny-mappings-parser/0.2.2.14/tiny-mappings-parser-0.2.2.14.jar",
-        "sha256": "0my9m6idghq1qz4wdr7bjji18p4z93iqx7a77apcnbhprrdiny3p",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "tiny-mappings-parser"
-        ],
-        "version": "0.2.2.14"
-      },
-      "net.fabricmc:sponge-mixin:0.8.2+build.24": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/sponge-mixin/0.8.2+build.24/sponge-mixin-0.8.2+build.24.jar",
-        "sha256": "175wjwy8kmjqja7y3xzb00iiz343i36nrvzfqgrr2brqc4i7kycj",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "sponge-mixin"
-        ],
-        "version": "0.8.2+build.24"
-      },
-      "net.fabricmc:tiny-remapper:0.3.0.70": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.3.0.70/tiny-remapper-0.3.0.70.jar",
-        "sha256": "080z7x0zyy681138kqpz7scqa3br5jmqwwg1fvx5c4xan8frc1g8",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "tiny-remapper"
-        ],
-        "version": "0.3.0.70"
-      },
-      "net.fabricmc:access-widener:1.0.0": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/access-widener/1.0.0/access-widener-1.0.0.jar",
-        "sha256": "007crna1y29r07wvrr063fyl6nrx3z4g7y1d3qxn0zx57dlwarvc",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "access-widener"
-        ],
-        "version": "1.0.0"
-      },
-      "net.fabricmc:fabric-loader-sat4j:2.3.5.4": {
-        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader-sat4j/2.3.5.4/fabric-loader-sat4j-2.3.5.4.jar",
-        "sha256": "1b47v90pqn4ddml7dwmcf7z37ywacfh1gh398f6nj68135mlsl5i",
-        "classPath": [
-          "net",
-          "fabricmc",
-          "fabric-loader-sat4j"
-        ],
-        "version": "2.3.5.4"
-      },
-      "com.google.jimfs:jimfs:1.2-fabric": {
-        "url": "https://maven.fabricmc.net/com/google/jimfs/jimfs/1.2-fabric/jimfs-1.2-fabric.jar",
-        "sha256": "15k9fs4iacbsqv28x3lygm55a4qsh3glc4vbglfscrd0r2py2qw5",
-        "classPath": [
-          "com",
-          "google",
-          "jimfs",
-          "jimfs"
-        ],
-        "version": "1.2-fabric"
-      },
-      "org.ow2.asm:asm:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm/9.0/asm-9.0.jar",
-        "sha256": "1q48g3afm40a1yshp7i35idx8i9k1zhb834x6kyr5vjaj5s7by8d",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-analysis:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar",
-        "sha256": "19n2r4nk0nsy8189h479hh2vhzi8nyd4ad55kandm92nz1nxwiid",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-analysis"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-commons:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar",
-        "sha256": "0bq90arz3xy4gk87n8yfrb77jv9icch01yrc5znx8yz6nyn9140v",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-commons"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-tree:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar",
-        "sha256": "03g0fv44wiwsxgl1m5pys10d2xsymidf8s457a462n5r5qrmzhp2",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-tree"
-        ],
-        "version": "9.0"
-      },
-      "org.ow2.asm:asm-util:9.0": {
-        "url": "https://maven.fabricmc.net/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar",
-        "sha256": "1dlva68k6qw3ns7g6abyji2s5c49lq31mh7kjd8yfqh83v8fgxia",
-        "classPath": [
-          "org",
-          "ow2",
-          "asm",
-          "asm-util"
-        ],
-        "version": "9.0"
-      },
-      "com.google.guava:guava:21.0": {
-        "url": "https://maven.fabricmc.net/com/google/guava/guava/21.0/guava-21.0.jar",
-        "sha256": "105l92cndc1i63x49bvsr4skz41cgg7sijvqza9li2mwi9qkj8cp",
-        "classPath": [
-          "com",
-          "google",
-          "guava",
-          "guava"
-        ],
-        "version": "21.0"
+      "1.16.5": {
+        "net.fabricmc:fabric-loader:0.11.1": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.11.1/fabric-loader-0.11.1.jar",
+          "sha256": "08wbgb9darhmhffsqhb723hqgglrg2yrbrwlrq1qzbwq0p84cahh",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "fabric-loader"
+          ],
+          "version": "0.11.1"
+        },
+        "net.fabricmc:tiny-mappings-parser:0.2.2.14": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/tiny-mappings-parser/0.2.2.14/tiny-mappings-parser-0.2.2.14.jar",
+          "sha256": "0my9m6idghq1qz4wdr7bjji18p4z93iqx7a77apcnbhprrdiny3p",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "tiny-mappings-parser"
+          ],
+          "version": "0.2.2.14"
+        },
+        "net.fabricmc:sponge-mixin:0.8.2+build.24": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/sponge-mixin/0.8.2+build.24/sponge-mixin-0.8.2+build.24.jar",
+          "sha256": "175wjwy8kmjqja7y3xzb00iiz343i36nrvzfqgrr2brqc4i7kycj",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "sponge-mixin"
+          ],
+          "version": "0.8.2+build.24"
+        },
+        "net.fabricmc:tiny-remapper:0.3.0.70": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.3.0.70/tiny-remapper-0.3.0.70.jar",
+          "sha256": "080z7x0zyy681138kqpz7scqa3br5jmqwwg1fvx5c4xan8frc1g8",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "tiny-remapper"
+          ],
+          "version": "0.3.0.70"
+        },
+        "net.fabricmc:access-widener:1.0.0": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/access-widener/1.0.0/access-widener-1.0.0.jar",
+          "sha256": "007crna1y29r07wvrr063fyl6nrx3z4g7y1d3qxn0zx57dlwarvc",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "access-widener"
+          ],
+          "version": "1.0.0"
+        },
+        "net.fabricmc:fabric-loader-sat4j:2.3.5.4": {
+          "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader-sat4j/2.3.5.4/fabric-loader-sat4j-2.3.5.4.jar",
+          "sha256": "1b47v90pqn4ddml7dwmcf7z37ywacfh1gh398f6nj68135mlsl5i",
+          "classPath": [
+            "net",
+            "fabricmc",
+            "fabric-loader-sat4j"
+          ],
+          "version": "2.3.5.4"
+        },
+        "com.google.jimfs:jimfs:1.2-fabric": {
+          "url": "https://maven.fabricmc.net/com/google/jimfs/jimfs/1.2-fabric/jimfs-1.2-fabric.jar",
+          "sha256": "15k9fs4iacbsqv28x3lygm55a4qsh3glc4vbglfscrd0r2py2qw5",
+          "classPath": [
+            "com",
+            "google",
+            "jimfs",
+            "jimfs"
+          ],
+          "version": "1.2-fabric"
+        },
+        "org.ow2.asm:asm:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm/9.0/asm-9.0.jar",
+          "sha256": "1q48g3afm40a1yshp7i35idx8i9k1zhb834x6kyr5vjaj5s7by8d",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-analysis:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar",
+          "sha256": "19n2r4nk0nsy8189h479hh2vhzi8nyd4ad55kandm92nz1nxwiid",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-analysis"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-commons:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar",
+          "sha256": "0bq90arz3xy4gk87n8yfrb77jv9icch01yrc5znx8yz6nyn9140v",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-commons"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-tree:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar",
+          "sha256": "03g0fv44wiwsxgl1m5pys10d2xsymidf8s457a462n5r5qrmzhp2",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-tree"
+          ],
+          "version": "9.0"
+        },
+        "org.ow2.asm:asm-util:9.0": {
+          "url": "https://maven.fabricmc.net/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar",
+          "sha256": "1dlva68k6qw3ns7g6abyji2s5c49lq31mh7kjd8yfqh83v8fgxia",
+          "classPath": [
+            "org",
+            "ow2",
+            "asm",
+            "asm-util"
+          ],
+          "version": "9.0"
+        },
+        "com.google.guava:guava:21.0": {
+          "url": "https://maven.fabricmc.net/com/google/guava/guava/21.0/guava-21.0.jar",
+          "sha256": "105l92cndc1i63x49bvsr4skz41cgg7sijvqza9li2mwi9qkj8cp",
+          "classPath": [
+            "com",
+            "google",
+            "guava",
+            "guava"
+          ],
+          "version": "21.0"
+        }
       }
     }
   },
   "fabric-installer": {
-    "generic": {
-      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.6.1.51/fabric-installer-0.6.1.51.jar",
-      "sha256": "0cima0n3b37qha9a16kcvjnx9mg231v5wdg1063gxnq3vrxlcw23",
-      "classPath": [
-        "net",
-        "fabricmc",
-        "fabric-installer"
-      ],
-      "version": "0.6.1.51"
-    }
+    "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.6.1.51/fabric-installer-0.6.1.51.jar",
+    "sha256": "0cima0n3b37qha9a16kcvjnx9mg231v5wdg1063gxnq3vrxlcw23",
+    "classPath": [
+      "net",
+      "fabricmc",
+      "fabric-installer"
+    ],
+    "version": "0.6.1.51"
   }
 }
