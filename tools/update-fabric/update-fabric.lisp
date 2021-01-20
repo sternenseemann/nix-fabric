@@ -179,4 +179,8 @@
           ("fabric-installer" . ((:generic . ,installer-set))))
         (uiop:process-info-input jq))
       (uiop:close-streams jq)
-      (uiop:wait-process jq))))
+      ; exit with jq's exit status
+      (let ((exit (uiop:wait-process jq)))
+        (unless (= 0 exit)
+          (format t "Error: jq exited with ~D" exit)
+          (uiop:quit exit))))))
